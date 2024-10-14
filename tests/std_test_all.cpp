@@ -21,10 +21,7 @@ int main() {
                 std_expression.push_back(j);
             else
                 std_expression.push_back('|');
-            if (j != '@')
-                regex.emplace_back(j);
-            else
-                regex.push_back(epsilon<char>);
+            regex.emplace_back(j);
         }
         std::regex std_regex(std_expression, std::regex::optimize);
         auto automata =
@@ -44,8 +41,7 @@ int main() {
             fin >> str;
             std::vector<char> s;
             for (auto &&j: str) {
-                if (j != '-')
-                    s.emplace_back(j);
+                s.emplace_back(j);
             }
             std::cmatch m;
             if (std::regex_match(str.c_str(), m, std_regex) != DFA_accept(automata, s)) {
