@@ -1,0 +1,24 @@
+stages:
+  - build
+  - test
+
+build-job:
+  tags:
+    - regex_lab
+  stage: build
+  script:
+    - cmake -G "Unix Makefiles" -S . -B build
+    - cd build
+    - make all
+    - echo "Compile complete."
+
+test-job:
+  tags:
+    - regex_lab
+  stage: test
+  script:
+    - cmake -G "Unix Makefiles" -S . -B build
+    - cd build
+    - make regex_lab_std_test
+    - ./regex_lab_std_test
+    - echo "Pass."

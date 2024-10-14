@@ -70,4 +70,4 @@ target_link_libraries(regex_lab_std_test
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/ParseTree-to-eNFA.a
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/subset-construction.a
 )
-# cmake -G "MinGW Makefiles" -S . -B build && cd build && make
+# cmake -G "Unix Makefiles" -S . -B build && cd build && make

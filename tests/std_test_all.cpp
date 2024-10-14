@@ -50,9 +50,10 @@ int main() {
             std::cmatch m;
             if (std::regex_match(str.c_str(), m, std_regex) != DFA_accept(automata, s)) {
                 std::cout << "Wrong: " << str << " with " << expression << std::endl;
+                return 1;
             }
         }
-        std::cout << "Pass testcase " << t << std::endl;
+        std::cout << "Test " << t << " finished." << std::endl;
     }
     return 0;
 }
