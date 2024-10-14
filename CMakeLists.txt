@@ -20,7 +20,7 @@ include_directories(model)
 include_directories(homework)
 
 add_executable(regex_lab_test
-        tests/all.cpp
+        tests/test.cpp
         tests/lib_char.h
         model/parse_tree.h
         model/NFA.h
