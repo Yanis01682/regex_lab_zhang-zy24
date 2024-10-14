@@ -1,7 +1,3 @@
-//
-// Created by 张英奇 on 2023/9/25.
-//
-
 #ifndef REGEX_LAB_NFA_H
 #define REGEX_LAB_NFA_H
 
@@ -49,7 +45,7 @@ public:
     std::set<state *> F;
 
     // 构造一个状态数量不能超过 buf_size 的 NFA
-    explicit NFA(unsigned long long buf_size) {
+    explicit NFA(std::size_t buf_size) {
         buf = new state[buf_size];
     }
 

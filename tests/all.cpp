@@ -1,21 +1,22 @@
 #include <iostream>
-#include "expression-parser/to_polish.h"
-#include "expression-parser/parser.h"
-#include "ParseTree-to-eNFA/converter.h"
-#include "subset-construction/subset_construction.h"
-#include "DFA-minimization/minimization.h"
 #include "DFA-accept/accept.h"
+#include "expression-parser/to_polish.h"
+#include "lib_char.h"
+// #include "expression-parser/parser.h"
+// #include "ParseTree-to-eNFA/converter.h"
+// #include "subset-construction/subset_construction.h"
+// #include "DFA-minimization/minimization.h"
 
 int main() {
     std::string expression;
     std::cout << std::boolalpha;
     std::cin >> expression;
-    std::vector<COE> regex;
+    std::vector<char> regex;
     for (auto &&j: expression) {
         if (j != '@')
             regex.emplace_back(j);
         else
-            regex.push_back(epsilon<COE>);
+            regex.push_back(epsilon<char>);
     }
     auto automata =
             minimization(
@@ -34,22 +35,12 @@ int main() {
     for (int i = 0; i < n; ++i) {
         std::string str;
         std::cin >> str;
-        std::vector<COE> s;
+        std::vector<char> s;
         for (auto &&j: str) {
             if (j != '-')
                 s.emplace_back(j);
         }
-        bool oos = false;
-        for (auto &&c: s) {
-            if (!automata.Sigma.count(c)) {
-                std::cout << "Out of Sigma!" << std::endl;
-                oos = true;
-                break;
-            }
-        }
-        if (!oos)
-            std::cout << DFA_accept(automata, s) << std::endl;
+        std::cout << DFA_accept(automata, s) << std::endl;
     }
-
     return 0;
 }

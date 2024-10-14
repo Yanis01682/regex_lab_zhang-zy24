@@ -1,7 +1,3 @@
-//
-// Created by 张英奇 on 2023/9/25.
-//
-
 #ifndef REGEX_LAB_PARSE_TREE_H
 #define REGEX_LAB_PARSE_TREE_H
 
@@ -37,7 +33,7 @@ public:
     Node *root;
 
     // 构造一个节点数量不能超过 buf_size 的语法分析树
-    explicit ParseTree(unsigned long long buf_size) {
+    explicit ParseTree(std::size_t buf_size) {
         buf = new Node[buf_size];
     }
 

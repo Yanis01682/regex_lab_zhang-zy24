@@ -1,20 +1,16 @@
-//
-// Created by 张英奇 on 2023/9/25.
-//
-
 #ifndef REGEX_LAB_SUBSET_CONSTRUCTION_H
 #define REGEX_LAB_SUBSET_CONSTRUCTION_H
 
-#include <functional>
+#include <algorithm>
 #include "NFA.h"
 #include "DFA.h"
 
 template<typename T>
 DFA<T> subset_construction(const NFA<T> &n) {
-    // TODO
+    // TODO: ~100 lines
     return DFA<T>(0);
 }
 
-const std::function<DFA<char>(const NFA<char> &)> subset_construction_char = subset_construction<char>;
+template DFA<char> subset_construction<char>(const NFA<char> &n);
 
 #endif //REGEX_LAB_SUBSET_CONSTRUCTION_H

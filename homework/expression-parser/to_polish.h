@@ -1,7 +1,3 @@
-//
-// Created by 张英奇 on 2023/9/25.
-//
-
 #ifndef REGEX_LAB_TO_POLISH_H
 #define REGEX_LAB_TO_POLISH_H
 
@@ -12,7 +8,7 @@
 template<typename T>
 std::vector<T> to_polish(const std::vector<T> &regex) {
     std::vector<T> r, next;
-    unsigned long long j = 0;
+    std::size_t j = 0;
     for (int i = 0; i < regex.size(); ++i) {
         T c = regex[i];
         if (c == regex_union<T>) {

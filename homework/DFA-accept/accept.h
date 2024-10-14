@@ -7,7 +7,10 @@
 
 template<typename T>
 bool DFA_accept(const DFA<T> &dfa, const std::vector<T> s) {
-    // TODO
+    for (auto &&c: s)
+        if (!dfa.Sigma.count(c))
+            return false;
+    // TODO: ~5 lines
     return false;
 }
 
