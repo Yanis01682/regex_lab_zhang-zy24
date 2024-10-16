@@ -2,10 +2,6 @@
 #include "DFA-accept/accept.h"
 #include "expression-parser/to_polish.h"
 #include "lib_char.h"
-// #include "expression-parser/parser.h"
-// #include "ParseTree-to-eNFA/converter.h"
-// #include "subset-construction/subset_construction.h"
-// #include "DFA-minimization/minimization.h"
 
 int main() {
     std::string expression;

@@ -28,4 +28,9 @@ DFA<T> minimization(const DFA<T> &old_dfa);
 
 extern template DFA<char> minimization<char>(const DFA<char> &old_dfa);
 
+// #include "expression-parser/parser.h"
+// #include "ParseTree-to-eNFA/converter.h"
+// #include "subset-construction/subset_construction.h"
+// #include "DFA-minimization/minimization.h"
+
 #endif //REGEX_LAB_LIB_CHAR_H

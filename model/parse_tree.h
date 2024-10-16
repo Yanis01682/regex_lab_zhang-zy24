@@ -25,7 +25,7 @@ public:
         T label_value;
         // 父节点
         Node *parent;
-        // 各子节点
+        // 各子节点，按照语法分析树丛左到右的顺序
         std::vector<Node *> children;
     };
 
