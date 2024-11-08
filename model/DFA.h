@@ -1,7 +1,3 @@
-//
-// Created by 张英奇 on 2023/9/25.
-//
-
 #ifndef REGEX_LAB_DFA_H
 #define REGEX_LAB_DFA_H
 

@@ -1,9 +1,5 @@
-//
-// Created by 张英奇 on 2023/9/26.
-//
-
-#ifndef REGEX_LAB_SOLUTION_COE_H
-#define REGEX_LAB_SOLUTION_COE_H
+#ifndef REGEX_LAB_COE_H
+#define REGEX_LAB_COE_H
 
 // character or epsilon
 struct COE {
@@ -41,4 +37,4 @@ struct COE {
     }
 };
 
-#endif //REGEX_LAB_SOLUTION_COE_H
+#endif //REGEX_LAB_COE_H

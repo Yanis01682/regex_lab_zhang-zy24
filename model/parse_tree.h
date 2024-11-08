@@ -1,7 +1,3 @@
-//
-// Created by 张英奇 on 2023/9/25.
-//
-
 #ifndef REGEX_LAB_PARSE_TREE_H
 #define REGEX_LAB_PARSE_TREE_H
 
