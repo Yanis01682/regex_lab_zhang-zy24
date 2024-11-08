@@ -7,8 +7,8 @@
 
 template<typename T>
 ParseTree<T> polish_parser(const std::vector<T> &regex) {
-    // TODO: ~50 lines
-    return ParseTree<T>(0);
+    // TODO: ~30 lines
+    return ParseTree<T>();
 }
 
 template ParseTree<char> polish_parser<char>(const std::vector<char> &regex);

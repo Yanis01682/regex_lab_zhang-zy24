@@ -6,7 +6,7 @@
 template<typename T>
 DFA<T> minimization(const DFA<T> &old_dfa) {
     // TODO: ~90 lines
-    return DFA<T>(0);
+    return DFA<T>();
 }
 
 template DFA<char> minimization(const DFA<char> &old_dfa);

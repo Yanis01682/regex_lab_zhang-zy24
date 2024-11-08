@@ -33,7 +33,6 @@ add_executable(regex_lab_test
         homework/ParseTree-to-eNFA/converter.h
         homework/subset-construction/subset_construction.h
         homework/DFA-minimization/minimization.h
-        homework/ParseTree-to-eNFA/merge_NFA.h
         homework/DFA-to-expression/converter.h
 )
 
@@ -59,7 +58,6 @@ add_executable(regex_lab_std_test
         homework/ParseTree-to-eNFA/converter.h
         homework/subset-construction/subset_construction.h
         homework/DFA-minimization/minimization.h
-        homework/ParseTree-to-eNFA/merge_NFA.h
         homework/DFA-to-expression/converter.h
 )
 

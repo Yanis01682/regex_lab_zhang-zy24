@@ -1,6 +1,11 @@
+//
+// Created by 张英奇 on 2023/9/25.
+//
+
 #ifndef REGEX_LAB_NFA_H
 #define REGEX_LAB_NFA_H
 
+#include <memory>
 #include <set>
 #include <map>
 #include <string>
@@ -14,48 +19,41 @@ public:
         // 状态名，以便于调试
         std::string name;
         // 接受字符的状态转移映射
-        std::map<T, std::set<state *>> transition;
+        std::map<T, std::set<std::shared_ptr<state>>> transition;
         // epsilon 状态转移映射
-        std::set<state *> epsilon_transition;
+        std::set<std::shared_ptr<state>> epsilon_transition;
     };
 
     // 状态集
-    std::set<state *> Q;
+    std::set<std::shared_ptr<state>> Q;
 
     // 输入符号集
     std::set<T> Sigma;
 
     // 接受字符的转移函数
-    static std::set<state *> delta(state *q, T a) {
+    static std::set<std::shared_ptr<state>> delta(std::shared_ptr<state> q, T a) {
         auto it = q->transition.find(a);
         if (it != q->transition.end())
             return it->second;
-        return std::set<state *>();
+        return std::set<std::shared_ptr<state>>();
     };
 
     // epsilon 转移函数
-    static std::set<state *> delta(state *q) {
+    static std::set<std::shared_ptr<state>> delta(std::shared_ptr<state> q) {
         return q->epsilon_transition;
     }
 
     // 开始状态
-    state *q0;
+    std::shared_ptr<state> q0;
 
     // 终态集合
-    std::set<state *> F;
+    std::set<std::shared_ptr<state>> F;
 
-    // 构造一个状态数量不能超过 buf_size 的 NFA
-    explicit NFA(std::size_t buf_size) {
-        buf = new state[buf_size];
-    }
-
-    // 存放 state 的内存空间
-    state *buf;
+    // 构造一个 NFA
+    explicit NFA() = default;
 
     // 回收内存空间
-    ~NFA() {
-        delete[] buf;
-    }
+    ~NFA() = default;
 
     // 禁止拷贝
     NFA(const NFA &) = delete;
@@ -69,8 +67,6 @@ public:
         Sigma = std::move(m.Sigma);
         q0 = std::move(m.q0);
         F = std::move(m.F);
-        buf = std::move(m.buf);
-        m.buf = nullptr;
     }
 
     // 可以移动
@@ -79,8 +75,6 @@ public:
         Sigma = std::move(m.Sigma);
         q0 = std::move(m.q0);
         F = std::move(m.F);
-        buf = std::move(m.buf);
-        m.buf = nullptr;
     }
 };
 
