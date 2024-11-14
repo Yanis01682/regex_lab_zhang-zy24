@@ -7,7 +7,7 @@
 
 template<typename T>
 DFA<T> subset_construction(const NFA<T> &n) {
-    // TODO: ~80 lines
+    // TODO: ~70 lines
     return DFA<T>();
 }
 

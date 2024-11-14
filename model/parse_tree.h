@@ -57,6 +57,7 @@ public:
     // 可以移动
     ParseTree &operator=(ParseTree &&m) noexcept {
         root = std::move(m.root);
+        return *this;
     }
 };
 

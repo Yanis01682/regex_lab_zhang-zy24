@@ -71,6 +71,7 @@ public:
         Sigma = std::move(m.Sigma);
         q0 = std::move(m.q0);
         F = std::move(m.F);
+        return *this;
     }
 };
 
