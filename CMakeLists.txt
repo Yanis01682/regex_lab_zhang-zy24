@@ -33,12 +33,10 @@ add_executable(regex_lab_test
         homework/ParseTree-to-eNFA/converter.h
         homework/subset-construction/subset_construction.h
         homework/DFA-minimization/minimization.h
-        homework/DFA-to-expression/converter.h
 )
 
 target_link_libraries(regex_lab_test
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/DFA-minimization.a
-        ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/DFA-to-expression.a
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/expression-parser.a
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/ParseTree-to-eNFA.a
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/subset-construction.a
@@ -58,12 +56,10 @@ add_executable(regex_lab_std_test
         homework/ParseTree-to-eNFA/converter.h
         homework/subset-construction/subset_construction.h
         homework/DFA-minimization/minimization.h
-        homework/DFA-to-expression/converter.h
 )
 
 target_link_libraries(regex_lab_std_test
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/DFA-minimization.a
-        ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/DFA-to-expression.a
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/expression-parser.a
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/ParseTree-to-eNFA.a
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/subset-construction.a

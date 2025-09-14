@@ -3,12 +3,12 @@
 
 #include "DFA.h"
 
-template<typename T>
-DFA<T> minimization(const DFA<T> &old_dfa) {
+template <typename T>
+DFA<T> minimization(const DFA<T>& old_dfa) {
     // TODO: ~90 lines
     return DFA<T>();
 }
 
-template DFA<char> minimization(const DFA<char> &old_dfa);
+template DFA<char> minimization(const DFA<char>& old_dfa);
 
-#endif //REGEX_LAB_MINIMIZATION_H
+#endif // REGEX_LAB_MINIMIZATION_H

@@ -1,23 +1,25 @@
 #ifndef REGEX_LAB_ACCEPT_H
 #define REGEX_LAB_ACCEPT_H
 
-#include <vector>
-#include <string>
 #include "DFA.h"
+#include <string>
+#include <vector>
 
-template<typename T>
-bool DFA_accept(const DFA<T> &dfa, const std::vector<T> s) {
-    for (auto &&c: s)
-        if (!dfa.Sigma.count(c))
+template <typename T>
+bool DFA_accept(const DFA<T>& dfa, const std::vector<T> s) {
+    for (auto&& c : s) {
+        if (!dfa.Sigma.count(c)) {
             return false;
+        }
+    }
     // TODO: ~5 lines
     return false;
 }
 
-template<typename T>
-bool DFA_accept(const DFA<T> &dfa, const std::basic_string<T> &s) {
+template <typename T>
+bool DFA_accept(const DFA<T>& dfa, const std::basic_string<T>& s) {
     std::vector<T> v(s.begin(), s.end());
     return DFA_accept(dfa, v);
 }
 
-#endif //REGEX_LAB_ACCEPT_H
+#endif // REGEX_LAB_ACCEPT_H

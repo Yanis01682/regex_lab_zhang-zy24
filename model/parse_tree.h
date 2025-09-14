@@ -4,11 +4,10 @@
 #include <memory>
 #include <vector>
 
-template<typename T>
+template <typename T>
 // 语法分析树
 class ParseTree {
 public:
-
     // 语法分析树的节点类型
     struct node {
         // 节点的类型枚举
@@ -30,8 +29,8 @@ public:
         std::vector<std::shared_ptr<node>> children;
 
         // 构造一个不含子节点的语法分析树节点
-        explicit node(const LabelType label_type, T label_value, std::shared_ptr<node> parent) :
-                label_type(label_type), label_value(label_value), parent(parent), children({}) {}
+        explicit node(const LabelType label_type, T label_value, std::shared_ptr<node> parent)
+            : label_type(label_type), label_value(label_value), parent(parent), children({}) {}
     };
 
     // 语法分析树的根节点
@@ -44,22 +43,22 @@ public:
     ~ParseTree() = default;
 
     // 禁止拷贝
-    ParseTree(const ParseTree &) = delete;
+    ParseTree(const ParseTree&) = delete;
 
     // 禁止拷贝
-    ParseTree &operator=(const ParseTree &) = delete;
+    ParseTree& operator=(const ParseTree&) = delete;
 
     // 可以移动
-    ParseTree(ParseTree &&m) noexcept {
+    ParseTree(ParseTree&& m) noexcept {
         root = std::move(m.root);
     }
 
     // 可以移动
-    ParseTree &operator=(ParseTree &&m) noexcept {
+    ParseTree& operator=(ParseTree&& m) noexcept {
         root = std::move(m.root);
         return *this;
     }
 };
 
 
-#endif //REGEX_LAB_PARSE_TREE_H
+#endif // REGEX_LAB_PARSE_TREE_H

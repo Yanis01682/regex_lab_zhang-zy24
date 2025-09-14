@@ -5,7 +5,7 @@
 #include <set>
 #include <vector>
 
-template<typename X>
+template <typename X>
 class CFG {
 public:
     // 变元的集合

@@ -6,7 +6,7 @@
 
 template <typename T>
 ParseTree<T> CYK_algorithm(const CFG<T>& g, const std::vector<T>& str) {
-    // TODO: ~70 lines
+    // TODO: ~80 lines
     return ParseTree<T>();
 }
 

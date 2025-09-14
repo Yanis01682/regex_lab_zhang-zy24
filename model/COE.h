@@ -14,27 +14,39 @@ struct COE {
 
     explicit COE(const char c) : ch(c), ep(false) {}
 
-    COE(const COE &coe) = default;
+    COE(const COE& coe) = default;
 
-    COE &operator=(const COE &rhs) = default;
+    COE& operator=(const COE& rhs) = default;
 
-    bool operator==(const COE &other) const {
-        if (other.ep) return ep;
-        if (ep) return other.ep;
+    bool operator==(const COE& other) const {
+        if (other.ep) {
+            return ep;
+        }
+        if (ep) {
+            return other.ep;
+        }
         return ch == other.ch;
     }
 
-    bool operator!=(const COE &other) const {
-        if (other.ep) return !ep;
-        if (ep) return true;
+    bool operator!=(const COE& other) const {
+        if (other.ep) {
+            return !ep;
+        }
+        if (ep) {
+            return true;
+        }
         return ch != other.ch;
     }
 
-    bool operator<(const COE &other) const {
-        if (other.ep) return false;
-        if (ep) return true;
+    bool operator<(const COE& other) const {
+        if (other.ep) {
+            return false;
+        }
+        if (ep) {
+            return true;
+        }
         return ch < other.ch;
     }
 };
 
-#endif //REGEX_LAB_COE_H
+#endif // REGEX_LAB_COE_H

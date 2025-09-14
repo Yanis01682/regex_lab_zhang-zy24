@@ -1,9 +1,9 @@
-#include <regex>
-#include <fstream>
-#include <iostream>
 #include "DFA-accept/accept.h"
 #include "expression-parser/to_polish.h"
 #include "lib_char.h"
+#include <fstream>
+#include <iostream>
+#include <regex>
 
 int main() {
     std::ifstream fin("../testcases/input.txt");
@@ -12,31 +12,21 @@ int main() {
         fin >> expression;
         std::vector<char> regex;
         std::string std_expression;
-        for (auto &&j: expression) {
-            if (j != '+')
+        for (auto&& j : expression) {
+            if (j != '+') {
                 std_expression.push_back(j);
-            else
+            } else {
                 std_expression.push_back('|');
+            }
             regex.emplace_back(j);
         }
         std::regex std_regex(std_expression, std::regex::optimize);
-        auto automata =
-                minimization(
-                        subset_construction(
-                                PT_to_eNFA(
-                                        polish_parser(
-                                                to_polish(
-                                                        regex
-                                                )
-                                        )
-                                )
-                        )
-                );
+        const auto automata = minimization(subset_construction(PT_to_eNFA(polish_parser(to_polish(regex)))));
         for (int i = 0; i < 100; ++i) {
             std::string str;
             fin >> str;
             std::vector<char> s;
-            for (auto &&j: str) {
+            for (auto&& j : str) {
                 s.emplace_back(j);
             }
             std::cmatch m;
