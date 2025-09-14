@@ -5,7 +5,7 @@
 #include <vector>
 
 template<typename T>
-// 正则表达式的语法分析树
+// 语法分析树
 class ParseTree {
 public:
 
@@ -30,7 +30,7 @@ public:
         std::vector<std::shared_ptr<node>> children;
 
         // 构造一个不含子节点的语法分析树节点
-        explicit node(LabelType label_type, T label_value, std::shared_ptr<node> parent) :
+        explicit node(const LabelType label_type, T label_value, std::shared_ptr<node> parent) :
                 label_type(label_type), label_value(label_value), parent(parent), children({}) {}
     };
 

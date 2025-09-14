@@ -21,7 +21,7 @@ include_directories(homework)
 
 add_executable(regex_lab_test
         tests/test.cpp
-        tests/lib_char.h
+        homework/lib_char.h
         model/parse_tree.h
         model/NFA.h
         model/DFA.h
@@ -46,7 +46,7 @@ target_link_libraries(regex_lab_test
 
 add_executable(regex_lab_std_test
         tests/std_test_all.cpp
-        tests/lib_char.h
+        homework/lib_char.h
         model/parse_tree.h
         model/NFA.h
         model/DFA.h
@@ -68,4 +68,12 @@ target_link_libraries(regex_lab_std_test
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/ParseTree-to-eNFA.a
         ${CMAKE_SOURCE_DIR}/lib_char/${OS}-${MACHINE}/subset-construction.a
 )
-# cmake -G "Unix Makefiles" -S . -B build && cd build && make
+
+add_executable(CYK_algorithm
+        tests/CYK_test.cpp
+        model/parse_tree.h
+        model/CFG.h
+        homework/CYK-algorithm/CYK.h
+)
+
+# cmake -G "Unix Makefiles" -S . -B build && cd build && make all

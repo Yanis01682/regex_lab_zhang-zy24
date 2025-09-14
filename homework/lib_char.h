@@ -1,7 +1,6 @@
 #ifndef REGEX_LAB_LIB_CHAR_H
 #define REGEX_LAB_LIB_CHAR_H
 
-#include <functional>
 #include <vector>
 #include "parse_tree.h"
 #include "NFA.h"

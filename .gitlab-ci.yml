@@ -19,6 +19,7 @@ test-job:
   script:
     - cmake -G "Unix Makefiles" -S . -B build
     - cd build
-    - make regex_lab_std_test
+    - make all
     - ./regex_lab_std_test
+    - ./CYK_algorithm
     - echo "Pass."

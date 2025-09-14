@@ -45,7 +45,7 @@ int main() {
                 return 1;
             }
         }
-        std::cout << "Test " << t << " finished." << std::endl;
+        std::cout << "Regex Test " << t << " finished." << std::endl;
     }
     return 0;
 }
